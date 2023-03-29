@@ -1,10 +1,10 @@
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from "swiper";
 import "swiper/scss/pagination";
 import "swiper/css";
 import { Box } from "@mui/system";
 import { Button, Typography } from "@mui/material";
+import { MinCarousel } from "./MinCarousel";
 const img = [
   {
     name: "Canon camera",
@@ -111,7 +111,6 @@ export const BigCarousel = () => {
                       bgcolor: "#EDA415",
                       color: "#fff",
                       borderRadius: 50,
-                      zIndex: "1",
                     }}
                   >
                     <Box>

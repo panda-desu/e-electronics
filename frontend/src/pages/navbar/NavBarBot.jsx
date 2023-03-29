@@ -290,7 +290,7 @@ export const NavBarBot = () => {
                 </Popper>
               </Box>
             </Stack>
-            s{/* suulin button */}
+            {/* suulin button */}
             <Typography sx={{ textAlign: "center" }}>
               <Button
                 sx={{
