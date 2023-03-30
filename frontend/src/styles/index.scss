@@ -43,6 +43,7 @@
   color: #eda415;
   border: 1px solid #000;
 }
+
 .swiper-pagination-bullet.swiper-pagination-bullet-active {
   background-color: #eda415;
   border: 0px;
@@ -59,7 +60,6 @@
 .footerUl > Li {
   list-style-type: none;
   font-size: 19.38px;
-  color: #1b5a7d;
   margin-bottom: 15px;
   font-weight: 400;
 }
@@ -73,4 +73,27 @@
 }
 .footerUl {
   margin-top: 5px;
+}
+
+.footerUl > li > a {
+  text-decoration: none;
+  color: #1b5a7d;
+}
+.swiper-wrapper {
+  padding-bottom: 59px;
+}
+.products-slider .swiper-pagination {
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  bottom: 0;
+  width: 100% !important;
+}
+
+.link-decoration {
+  text-decoration: none;
+  color: #316887;
+}
+.size-checkbox {
+  content: ("252");
 }

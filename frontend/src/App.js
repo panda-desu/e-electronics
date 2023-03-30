@@ -1,9 +1,14 @@
+import { Route, Routes } from "react-router-dom";
 import { MainPage } from "./pages/MainPage";
+import { ProductPage } from "./pages/ProductPage";
 
 function App() {
   return (
     <>
-      <MainPage />
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+        <Route path="/product" element={<ProductPage />} />
+      </Routes>
     </>
   );
 }

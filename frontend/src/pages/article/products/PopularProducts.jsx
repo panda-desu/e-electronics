@@ -6,7 +6,8 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import "swiper/css";
 import "swiper/css/pagination";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
-import { bgcolor } from "@mui/system";
+import { ProductCard } from "./ProductCard";
+import { Stack } from "@mui/system";
 const ButtonStyle = {
   color: "#1B5A7D",
   border: "1px solid #1B5A7D",
@@ -133,36 +134,8 @@ const products = [
   },
 ];
 
-const favoriteBtnStyle = [
-  {
-    position: "absolute",
-    justifyContent: "center",
-    alignItems: "center",
-    top: "28px",
-    right: "15px",
-    width: "27.5px",
-    borderRadius: "50%",
-    height: "27.5px",
-    bgcolor: "#B3D4E5",
-    display: "flex",
-  },
-];
-
-const ShoppingCartBtnStyle = [
-  {
-    width: "45px",
-    height: "42px",
-    bgcolor: "#eda415",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    borderRadius: "50%",
-    color: "#fff",
-  },
-];
-
 export const PopularProducts = () => {
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = React.useState(products.rating);
 
   return (
     <>
@@ -200,150 +173,18 @@ export const PopularProducts = () => {
             slidesPerGroup={3}
             slidesPerColumnFill="row"
             pagination={{ clickable: true }}
+            className="products-slider"
           >
             {products.map((e, i) => {
               if (i % 2 === 0) {
                 const next = products[i + 1];
 
                 return (
-                  <SwiperSlide>
-                    <Box
-                      sx={{
-                        border: "1px solid #B6B6B6",
-                        width: "308.83px",
-                        height: "308.83px",
-                        borderRadius: 5,
-                        py: "16px",
-                        position: "relative",
-                        px: "13.2px",
-                      }}
-                    >
-                      <Box
-                        sx={{
-                          display: "flex",
-                          justifyContent: "center",
-                        }}
-                      >
-                        <img src={e.img} alt={e.desc} />
-                      </Box>
-                      <Box sx={favoriteBtnStyle}>
-                        <Button
-                          sx={{
-                            padding: 0,
-                            color: "#292d32",
-                            "&:hover": {
-                              bgcolor: "none",
-                              background: "none",
-                            },
-                          }}
-                          onSubmit
-                        >
-                          <FavoriteBorderIcon
-                            sx={{ width: "12.04px", height: "12.04px" }}
-                          />
-                        </Button>
-                      </Box>
-                      <Typography variant="h6" sx={{ color: "#003F62" }}>
-                        {e.name}
-                      </Typography>
-                      <Box
-                        sx={{
-                          display: "flex",
-                          justifyContent: "space-between",
-                          alignItems: "center",
-                          marginTop: "15px",
-                        }}
-                      >
-                        <Box>
-                          <Typography
-                            sx={{ color: "#4A4A4A", fontWeight: "600" }}
-                          >
-                            {e.price}
-                          </Typography>
-                          <Rating
-                            name="half-rated"
-                            precision={0.5}
-                            value={value}
-                            onChange={(event, newValue) => {
-                              setValue(newValue);
-                            }}
-                          />
-                        </Box>
-                        <Box sx={ShoppingCartBtnStyle}>
-                          <ShoppingCartOutlinedIcon />
-                        </Box>
-                      </Box>
-                    </Box>
-                    {next && (
-                      <Box
-                        sx={{
-                          marginTop: "30.5px",
-                          border: "1px solid #B6B6B6",
-                          width: "308.83px",
-                          height: "308.83px",
-                          borderRadius: 5,
-                          py: "16px",
-                          position: "relative",
-                          px: "13.2px",
-                        }}
-                      >
-                        <Box
-                          sx={{
-                            display: "flex",
-                            justifyContent: "center",
-                          }}
-                        >
-                          <img src={e.img} alt={e.desc} />
-                        </Box>
-                        <Box sx={favoriteBtnStyle}>
-                          <Button
-                            sx={{
-                              padding: 0,
-                              color: "#292d32",
-                              "&:hover": {
-                                background: "none",
-                                bgcolor: "none",
-                              },
-                            }}
-                            onSubmit
-                          >
-                            <FavoriteBorderIcon
-                              sx={{ width: "12.04px", height: "12.04px" }}
-                            />
-                          </Button>
-                        </Box>
-                        <Typography variant="h6" sx={{ color: "#003F62" }}>
-                          {e.name}
-                        </Typography>
-                        <Box
-                          sx={{
-                            display: "flex",
-                            justifyContent: "space-between",
-                            alignItems: "center",
-                            marginTop: "15px",
-                          }}
-                        >
-                          <Box>
-                            <Typography
-                              sx={{ color: "#4A4A4A", fontWeight: "600" }}
-                            >
-                              {e.price}
-                            </Typography>
-                            <Rating
-                              name="half-rated"
-                              precision={0.5}
-                              value={value}
-                              onChange={(event, newValue) => {
-                                setValue(newValue);
-                              }}
-                            />
-                          </Box>
-                          <Box sx={ShoppingCartBtnStyle}>
-                            <ShoppingCartOutlinedIcon />
-                          </Box>
-                        </Box>
-                      </Box>
-                    )}
+                  <SwiperSlide key={i}>
+                    <Stack sx={{ gap: 3 }}>
+                      <ProductCard data={e} />
+                      {next && <ProductCard data={e} />}
+                    </Stack>
                   </SwiperSlide>
                 );
               }

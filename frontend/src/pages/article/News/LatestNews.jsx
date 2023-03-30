@@ -84,12 +84,14 @@ export const LatestNews = () => {
             autoplay={true}
             pagination={{ clickable: true }}
             slidesPerView={2}
+            className="products-slider"
           >
             {topProducts.map((e, index) => (
-              <SwiperSlide virtualIndex={index}>
+              <SwiperSlide key={index}>
                 <Box
                   sx={{
                     border: "1px solid #c8c8c8",
+                    color: "#1B5A7D",
                     borderRadius: "20px",
                     padding: "34.5px 16.5px",
                     display: "flex",

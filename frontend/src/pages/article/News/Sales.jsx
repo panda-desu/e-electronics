@@ -14,7 +14,7 @@ export const Sales = () => {
   ];
   return (
     <>
-      <Box className="container" sx={{ marginTop: "129px" }}>
+      <Box className="container" sx={{ marginTop: "51px" }}>
         <Box sx={{ position: "relative" }}>
           <img src="/img/products/saledProduct.png" alt="" />
           <Box

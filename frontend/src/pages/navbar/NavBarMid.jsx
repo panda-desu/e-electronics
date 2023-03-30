@@ -7,11 +7,10 @@ import {
   Toolbar,
   IconButton,
   Typography,
-  Container,
   Badge,
   Button,
-  Link,
 } from "@mui/material";
+import { Link } from "react-router-dom";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
@@ -75,7 +74,7 @@ export const NavBarMid = () => {
                   },
                 }}
               >
-                <Link sx={{ cursor: "pointer" }}>
+                <Link to="/">
                   <img src={`/img/logos/logo1.png`} alt={"logo"} />
                 </Link>
               </Typography>

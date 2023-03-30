@@ -55,8 +55,8 @@ export const MinCarousel = () => {
         autoplay={true}
         navigation
       >
-        {img.map((e) => (
-          <SwiperSlide>
+        {img.map((e, i) => (
+          <SwiperSlide key={i}>
             <Box
               sx={{
                 display: "flex",

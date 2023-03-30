@@ -137,6 +137,7 @@ export const Comments = () => {
           spaceBetween={10}
           slidesPerView={3}
           pagination={{ clickable: true }}
+          className="products-slider"
         >
           {users.map((e, index) => (
             <SwiperSlide key={e} virtualIndex={index}>

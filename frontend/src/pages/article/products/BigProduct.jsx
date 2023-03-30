@@ -35,7 +35,12 @@ export const BigProduct = () => {
               <Typography sx={{ my: "17.5px", fontWeight: "600" }}>
                 $11,70
               </Typography>
-              <Rating name="half-rating" defaultValue={2.5} precision={0.5} />
+              <Rating
+                name="half-rating-read"
+                defaultValue={2.5}
+                precision={0.5}
+                readOnly
+              />
             </Box>
             <Button
               variant="contained"
@@ -75,7 +80,12 @@ export const BigProduct = () => {
                 <Typography sx={{ my: "17.5px", fontWeight: "600" }}>
                   $11,70
                 </Typography>
-                <Rating name="half-rating" defaultValue={2.5} precision={0.5} />
+                <Rating
+                  name="half-rating-read"
+                  defaultValue={2.5}
+                  precision={0.5}
+                  readOnly
+                />
               </Box>
             </Box>
           </Box>
@@ -89,7 +99,12 @@ export const BigProduct = () => {
                 <Typography sx={{ my: "17.5px", fontWeight: "600" }}>
                   $11,70
                 </Typography>
-                <Rating name="half-rating" defaultValue={2.5} precision={0.5} />
+                <Rating
+                  name="half-rating-read"
+                  defaultValue={2.5}
+                  precision={0.5}
+                  readOnly
+                />
               </Box>
             </Box>
           </Box>

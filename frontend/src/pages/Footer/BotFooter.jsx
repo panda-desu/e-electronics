@@ -60,9 +60,9 @@ export const BotFooter = () => {
           </Box>
         </Box>
         <Box sx={{ display: "flex", gap: "280px" }}>
-          {footer.map((e) => {
+          {footer.map((e, i) => {
             return (
-              <Box>
+              <Box key={i}>
                 <Typography
                   sx={{ color: "#1B5A7D", fontWeight: 600 }}
                   variant="h6"
@@ -70,11 +70,21 @@ export const BotFooter = () => {
                   {e.ul}
                 </Typography>
                 <ul className="footerUl">
-                  <li>{e.li1}</li>
-                  <li>{e.li2}</li>
-                  <li>{e.li3}</li>
-                  <li>{e.li4}</li>
-                  <li>{e.li5}</li>
+                  <li>
+                    <a href="">{e.li1}</a>
+                  </li>
+                  <li>
+                    <a href="">{e.li2}</a>
+                  </li>
+                  <li>
+                    <a href="">{e.li3}</a>
+                  </li>
+                  <li>
+                    <a href="">{e.li4}</a>
+                  </li>
+                  <li>
+                    <a href="">{e.li5}</a>
+                  </li>
                 </ul>
               </Box>
             );

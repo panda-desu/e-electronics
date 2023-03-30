@@ -1,10 +1,10 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from "swiper";
+import { Button, Typography } from "@mui/material";
+import { Pagination, Autoplay } from "swiper";
+import { Link } from "react-router-dom";
+import { Box } from "@mui/system";
 import "swiper/scss/pagination";
 import "swiper/css";
-import { Box } from "@mui/system";
-import { Button, Typography } from "@mui/material";
-import { MinCarousel } from "./MinCarousel";
 const img = [
   {
     name: "Canon camera",
@@ -37,9 +37,9 @@ export const BigCarousel = () => {
         slidesPerView={1}
         onSwiper={(swiper) => console.log(swiper)}
       >
-        {img.map((e) => {
+        {img.map((e, i) => {
           return (
-            <SwiperSlide>
+            <SwiperSlide key={i}>
               <Box
                 sx={{
                   display: "flex",
@@ -75,13 +75,14 @@ export const BigCarousel = () => {
                     <Button
                       variant="outlined"
                       sx={{
-                        color: "#316887",
                         padding: "18.5px 32px",
                         borderRadius: "20px",
                         fontWeight: "600",
                       }}
                     >
-                      View more
+                      <Link className="link-decoration" to="/product">
+                        View more
+                      </Link>
                     </Button>
                   </Box>
                 </Box>
@@ -116,7 +117,6 @@ export const BigCarousel = () => {
                     <Box>
                       <Typography
                         sx={{ fontWeight: "600px", fontSize: "21.5px" }}
-                        wrapped
                       >
                         Only
                       </Typography>
@@ -126,7 +126,6 @@ export const BigCarousel = () => {
                           fontSize: "21.5px",
                           textAlign: "center",
                         }}
-                        wrapped
                       >
                         $89
                       </Typography>
