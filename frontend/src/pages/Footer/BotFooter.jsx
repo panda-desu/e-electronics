@@ -2,6 +2,7 @@ import { Box, Typography } from "@mui/material";
 import GoogleIcon from "@mui/icons-material/Google";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import { Link } from "react-router-dom";
 
 const footer = [
   {
@@ -54,9 +55,15 @@ export const BotFooter = () => {
               width: "250px",
             }}
           >
-            <GoogleIcon />
-            <FacebookIcon sx={{ mx: "32px", color: "inherit" }} />
-            <WhatsAppIcon />
+            <Link target="_blank" to="https://www.google.com">
+              <GoogleIcon sx={{ color: "#000" }} />
+            </Link>
+            <Link target="_blank" to="https://www.facebook.com">
+              <FacebookIcon sx={{ mx: "32px", color: "#000" }} />
+            </Link>
+            <Link target="_blank" to="https://web.whatsapp.com/">
+              <WhatsAppIcon sx={{ color: "#000" }} />
+            </Link>
           </Box>
         </Box>
         <Box sx={{ display: "flex", gap: "280px" }}>

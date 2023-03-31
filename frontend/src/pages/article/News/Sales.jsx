@@ -1,17 +1,24 @@
 import { Button, Typography } from "@mui/material";
 import { Box } from "@mui/system";
+import { useNavigate } from "react-router-dom";
+
+const ButtonStyle = [
+  {
+    bgcolor: "#eda415",
+    color: "#fff",
+    borderRadius: 11,
+    textTransform: "none",
+    width: "134px",
+    height: "45px",
+  },
+];
 
 export const Sales = () => {
-  const ButtonStyle = [
-    {
-      bgcolor: "#eda415",
-      color: "#fff",
-      borderRadius: 11,
-      textTransform: "none",
-      width: "134px",
-      height: "45px",
-    },
-  ];
+  const navigate = useNavigate();
+
+  const navigateToCartPage = () => {
+    navigate("/cart");
+  };
   return (
     <>
       <Box className="container" sx={{ marginTop: "51px" }}>

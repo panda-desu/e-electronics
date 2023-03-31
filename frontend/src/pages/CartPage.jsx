@@ -1,12 +1,9 @@
-import { Box, Typography, Breadcrumbs } from "@mui/material";
+import { Box } from "@mui/system";
 import { Footer } from "./Footer/Footer";
 import { NavBar } from "./navbar/NavBar";
 import { BreadCrumbs } from "../components/BreadCrumbs";
-import { ProductView } from "./detailPage/ProductView";
-import { ProductComment } from "./detailPage/ProductComment";
-import { RelatedProduct } from "./detailPage/RelatedProduct";
-
-export const ProductPage = () => {
+import { PaymentSection } from "./cart/PaymentSection";
+export const CartPage = () => {
   const breadCrumbs = [
     {
       label: "Home",
@@ -17,20 +14,16 @@ export const ProductPage = () => {
       link: "/product",
     },
     {
-      label: "",
+      label: "Cart",
     },
   ];
   return (
     <>
       <NavBar />
-
       <Box className="container">
         <BreadCrumbs items={breadCrumbs} />
-        <ProductView />
-        <ProductComment />
-        <RelatedProduct />
+        <PaymentSection />
       </Box>
-
       <Footer />
     </>
   );

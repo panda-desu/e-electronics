@@ -1,7 +1,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Button, Typography } from "@mui/material";
 import { Pagination, Autoplay } from "swiper";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Box } from "@mui/system";
 import "swiper/scss/pagination";
 import "swiper/css";
@@ -27,6 +27,10 @@ const img = [
 ];
 
 export const BigCarousel = () => {
+  const navigate = useNavigate();
+  const navigateToCartPage = () => {
+    navigate("/cart");
+  };
   return (
     <Box className="container" sx={{ px: "113px", py: "37px" }}>
       <Swiper
@@ -69,6 +73,7 @@ export const BigCarousel = () => {
                         color: "#fff",
                         bgcolor: "#EDA415",
                       }}
+                      onClick={navigateToCartPage}
                     >
                       Shop Now
                     </Button>

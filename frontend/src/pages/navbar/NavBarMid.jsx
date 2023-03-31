@@ -10,7 +10,7 @@ import {
   Badge,
   Button,
 } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
@@ -50,6 +50,11 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export const NavBarMid = () => {
+  const navigate = useNavigate();
+  const navigateToCartPage = () => {
+    // 👇️ navigate to /contacts
+    navigate("/cart");
+  };
   return (
     <Box sx={{ bgcolor: "#003F62" }}>
       <Box className="container">
@@ -138,6 +143,7 @@ export const NavBarMid = () => {
                   size="large"
                   aria-label="show 17 new notifications"
                   color="inherit"
+                  onClick={navigateToCartPage}
                 >
                   <Badge badgeContent={"0"} color="warning">
                     <ShoppingCartOutlinedIcon />
